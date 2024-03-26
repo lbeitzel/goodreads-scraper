@@ -14,3 +14,6 @@ the book title can be separated by spaces, no need to add underscores or quotes
 
 ### Ex: 
 > python goodscrape.py a wizard of earthsea
+
+## Headless
+toggle headless mode (aka scraping done without opening windows) by commenting or uncommenting `line 11`

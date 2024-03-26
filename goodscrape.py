@@ -3,13 +3,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import sys
 
-
 options = webdriver.ChromeOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--ignore-certificate-errors-spki-list')
 options.add_argument('--ignore-ssl-errors')
+options.add_argument('log-level=3')
+# options.add_argument('--headless')
 driver = webdriver.Chrome(options)
-# driver.implicitly_wait(1)
 
 # gets the book title from the script args
 arg = sys.argv[1:]
@@ -50,3 +50,5 @@ print("Rating: ", rating.text)
 
 page_count = driver.find_element(By.CLASS_NAME, "FeaturedDetails").find_element(By.TAG_NAME, "p")
 print("Page count: ", page_count.text)
+
+print("Link: ", driver.current_url.split("?")[0])
